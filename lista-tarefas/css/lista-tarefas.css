@@ -112,3 +112,48 @@ input[type="submit"]:hover{
 .fa-pen-to-square{
     grid-column: 3/4;
 }
+.editContainer{
+    align-items: center;
+    background-color: #E1D0FC;
+    border-radius: .4rem;
+    box-shadow: 3px 3px 15px rgba(77, 77, 77, .8);
+    width: 120%;
+    height: 6rem;
+    top: 4rem;
+    left: 2rem;
+    position: absolute;
+    z-index: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    display: none;
+}
+.editContainer .editInput{
+    background-color: transparent;
+    border: none;
+    border: 2px solid #4B3D8A;
+    border-radius: .2rem;
+    padding: .5rem 1rem;
+}
+.editContainer .editInput:focus{
+    outline: none;
+}
+.editContainer .btn-editar, .editContainer .btn-cancelar{
+    border: none;
+    outline: transparent;
+    padding: .7rem 2rem;
+}
+.editContainer .btn-editar{
+    background-color: #4B3D8A;
+    color: seashell;
+}
+.editContainer .btn-editar:hover{
+    background-color: #8478B9;
+}
+.editContainer .btn-cancelar{
+    background-color: #8A3D3D;
+    color: seashell;
+}
+.editContainer .btn-cancelar:hover{
+    background-color: #6F3131;
+    color: seashell;
+}

@@ -53,7 +53,7 @@
         editInput.setAttribute("type", "text")
         editInput.className = "editInput"
         editContainer.appendChild(editInput)
-        btnContainerEditar.className = "editBtn"
+        btnContainerEditar.className = "btn-editar"
         btnContainerEditar.textContent = "Editar"
         editContainer.appendChild(btnContainerEditar)
         btnContainerCancelar.className = "btn-cancelar"
