@@ -1,0 +1,114 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    letter-spacing: inherit;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    letter-spacing: .2rem;
+}
+body, html{
+    height: 100%;
+}
+ul, li{
+    list-style-type: none;
+}
+button{
+    cursor: pointer;
+}
+ion-icon{
+    color: #4D4D4D;
+    font-size: 18px;
+}
+input[type="submit"]{
+    background-color: #F1C668;
+    border: none;
+    cursor: pointer;
+    margin-left: 1rem;
+    padding: 1rem 3rem;
+}
+input[type="submit"]:hover{
+    background-color: #F5DDAA;
+}
+.lista-tarefas__app{
+    background-color: #F7F7F7;
+    border-radius: 3px;
+    box-shadow: 2px 2px 15px rgba(77, 77, 77, .5);
+    margin: auto;
+    min-width: 37.5rem;
+}
+.lista-tarefas-add-item__container{
+    background-color: #726A95;
+    border-radius: 3px 3px 0 0;
+    padding: 3rem 2rem;
+}
+.lista-tarefas-add-item__container > .titulo{
+    font-size: 3rem;
+}
+.lista-tarefas-add-item{
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 3rem 0 1rem 0;
+}
+.inputItem{
+    flex-grow: 1;
+    padding: 0 1rem;
+    outline: transparent;
+}
+.inputItem::placeholder{
+    color: #A8A8A8;
+}
+.lista-tarefaas__container{
+    padding: 2rem;
+}
+.lista-tarefas-item{
+    border-radius: 3px;
+    box-shadow: 2px 2px 8px rgba(77, 77, 77, .5);
+    column-gap: .8rem;
+    display: flex;
+    grid-template-columns: 1fr minmax(20rem, auto) 1fr 1fr;
+    grid-template-rows: auto;
+    margin: 0 0 2rem;
+    padding: .8rem 2rem;
+    position: relative;
+}
+.lista-tarefas-item:last-child{
+    margin-bottom: 0;
+}
+.btn-completo{
+    align-self: center;
+    border: 2px solid #726A95;
+    border-radius: .2rem;
+    grid-column: 1/2;
+    justify-self: center;
+    position: relative;
+    outline: transparent;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.fa-circle-check{
+    color: #726A95;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+.fa-circle-check.displayNone{
+    display: none;
+}
+.nome-tarefa{
+    background-color: #F2F2F2;
+    font-size: 1.1rem;
+    grid-column: 2/3;
+    padding: 1rem;
+}
+.fa-pen-to-square{
+    grid-column: 3/4;
+}
