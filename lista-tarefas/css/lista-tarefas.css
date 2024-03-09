@@ -26,28 +26,29 @@ ion-icon{
     font-size: 18px;
 }
 input[type="submit"]{
-    background-color: #F1C668;
+    background-color: #60b64f;
     border: none;
     cursor: pointer;
     margin-left: 1rem;
     padding: 1rem 3rem;
 }
 input[type="submit"]:hover{
-    background-color: #F5DDAA;
+    background-color: #b7f5aa;
 }
 .lista-tarefas__app{
-    background-color: #F7F7F7;
+    background-color: #8a8a8a;
     border-radius: 3px;
     box-shadow: 2px 2px 15px rgba(77, 77, 77, .5);
     margin: auto;
     min-width: 37.5rem;
 }
 .lista-tarefas-add-item__container{
-    background-color: #726A95;
+    background-color: #4d4d4d;
     border-radius: 3px 3px 0 0;
     padding: 3rem 2rem;
 }
 .lista-tarefas-add-item__container > .titulo{
+    color: seashell;
     font-size: 3rem;
 }
 .lista-tarefas-add-item{
@@ -84,7 +85,7 @@ input[type="submit"]:hover{
 }
 .btn-completo{
     align-self: center;
-    border: 2px solid #726A95;
+    border: 2px solid #356be0;
     border-radius: .2rem;
     grid-column: 1/2;
     justify-self: center;
@@ -92,19 +93,20 @@ input[type="submit"]:hover{
     outline: transparent;
     height: 1.5rem;
     width: 1.5rem;
+    background-color: #8A8A8A;
 }
 .fa-circle-check{
-    color: #726A95;
+    color: #0d5097;
     top: 50%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, -50%);
 }
-.fa-circle-check .displayNone{
+.fa-circle-check.displayNone{
     display: none;
 }
 .nome-tarefa{
-    background-color: #F2F2F2;
+    background-color: transparent;
     font-size: 1.1rem;
     grid-column: 2/3;
     padding: 1rem;
@@ -114,7 +116,7 @@ input[type="submit"]:hover{
 }
 .editContainer{
     align-items: center;
-    background-color: #E1D0FC;
+    background-color: #cbcbcb;
     border-radius: .4rem;
     box-shadow: 3px 3px 15px rgba(77, 77, 77, .8);
     width: 120%;
@@ -122,7 +124,7 @@ input[type="submit"]:hover{
     top: 4rem;
     left: 2rem;
     position: absolute;
-    z-index: absolute;
+    z-index: 99999;
     display: flex;
     justify-content: space-evenly;
     display: none;
@@ -130,7 +132,7 @@ input[type="submit"]:hover{
 .editContainer .editInput{
     background-color: transparent;
     border: none;
-    border: 2px solid #4B3D8A;
+    border: 2px solid #363536;
     border-radius: .2rem;
     padding: .5rem 1rem;
 }
@@ -143,11 +145,11 @@ input[type="submit"]:hover{
     padding: .7rem 2rem;
 }
 .editContainer .btn-editar{
-    background-color: #4B3D8A;
+    background-color: #3d8a46;
     color: seashell;
 }
 .editContainer .btn-editar:hover{
-    background-color: #8478B9;
+    background-color: #5bcc68;
 }
 .editContainer .btn-cancelar{
     background-color: #8A3D3D;
@@ -175,16 +177,16 @@ input[type="submit"]:hover{
     outline: none;
 }
 .fa-trash-can{
-    color: #868686;
-}
-.fa-trash-can:hover{
     color: #C70039;
 }
+.fa-trash-can:hover{
+    color: #e75050;
+}
 .fa-pen-to-square{
-    color: #70608F;
+    color: #1A0577;
 }
 .fa-pen-to-square:hover{
-    color: #1A0577;
+    color: #4f68d6;
 }
 .fa-pen-to-square:active, .fa-trash-can:active{
     border: none;

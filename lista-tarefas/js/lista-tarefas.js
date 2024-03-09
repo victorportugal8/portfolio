@@ -19,11 +19,11 @@
         }
     ]
 
-    function addEventoLi(li){
-        li.addEventListener("click", function(){
-            console.log(this)
-        })
-    }
+    // function addEventoLi(li){
+    //     li.addEventListener("click", function(){
+    //         console.log(this)
+    //     })
+    // }
 
     function criaLiTarefa(obj){
         const li = document.createElement("li")
@@ -36,10 +36,11 @@
         const btnContainerEditar = document.createElement("button")
         const btnContainerCancelar = document.createElement("button")
         
-        li.className = "lista-terafas-item"
+        li.className = "lista-tarefas-item"
         
         btnCheck.className = "btn-completo"
         btnCheck.innerHTML = '<i class="fa-solid fa-circle-check displayNone"></i>'
+        btnCheck.setAttribute("data-action", "checkBtn")
 
         li.appendChild(btnCheck)
 
@@ -47,6 +48,7 @@
         p.textContent = obj.name
 
         btnEdit.className = "fa-solid fa-pen-to-square"
+        btnEdit.setAttribute("data-action", "editBtn")
         li.appendChild(btnEdit)
 
         editContainer.className = "editContainer"
@@ -55,18 +57,21 @@
         editContainer.appendChild(editInput)
         btnContainerEditar.className = "btn-editar"
         btnContainerEditar.textContent = "Editar"
+        btnContainerEditar.setAttribute("data-action", "editarContainerBtn")
         editContainer.appendChild(btnContainerEditar)
         btnContainerCancelar.className = "btn-cancelar"
         btnContainerCancelar.textContent = "Cancelar"
+        btnContainerCancelar.setAttribute("data-action", "cancelarContainerBtn")
         editContainer.appendChild(btnContainerCancelar)
 
         li.appendChild(editContainer)
 
         btnApagar.className = "fa-solid fa-trash-can"
+        btnApagar.setAttribute("data-action", "apagarBtn")
         li.appendChild(btnApagar)
 
         li.appendChild(p)
-        addEventoLi(li)
+        // addEventoLi(li)
 
         return li
     }
@@ -86,6 +91,11 @@
         })
     }
 
+    function ulClicada(e){
+        console.log(e.target)
+        console.log(e.target.getAttribute("data-action"))
+    }
+
     listaTarefasForm.addEventListener("submit", function(e){
         e.preventDefault()
         console.log(itemInput.value)
@@ -94,6 +104,8 @@
         itemInput.value = ""
         itemInput.focus()
     });
+
+    ul.addEventListener("click", ulClicada)
 
     renderizarTarefas()
 })()
