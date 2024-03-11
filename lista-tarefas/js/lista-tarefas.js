@@ -39,7 +39,7 @@
         li.className = "lista-tarefas-item"
         
         btnCheck.className = "btn-completo"
-        btnCheck.innerHTML = '<i class="fa-solid fa-circle-check displayNone"></i>'
+        btnCheck.innerHTML = `<i class="fa-solid fa-circle-check ${obj.completed ? "" : "displayNone"}" data-action="checkBtn"></i>`
         btnCheck.setAttribute("data-action", "checkBtn")
 
         li.appendChild(btnCheck)
@@ -124,6 +124,15 @@
             cancelarContainerBtn: function(){
                 liAtual.querySelector(".editContainer").removeAttribute("style")
                 liAtual.querySelector(".editInput").value = tarefasArray[indiceLiAtual].name
+            },
+            checkBtn: function(){
+                tarefasArray[indiceLiAtual].completed = !tarefasArray[indiceLiAtual].completed
+                // if(tarefasArray[indiceLiAtual].completed){
+                //     liAtual.querySelector(".fa-circle-check").classList.remove("displayNone")
+                // } else{
+                //     liAtual.querySelector(".fa-circle-check").classList.add("displayNone")
+                // }
+                renderizarTarefas()
             }
         }
 
