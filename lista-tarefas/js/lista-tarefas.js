@@ -6,24 +6,20 @@
     const  ul = document.getElementById("lista-tarefas")
     const lis = ul.getElementsByTagName("li")
 
-    let tarefasArray = [
-        {
-            name: "Tarefa 1",
-            createdAt: Date.now(),
-            completed: false
-        },
-        {
-            name: "Tarefa 2",
-            createdAt: Date.now(),
-            completed: false
-        }
-    ]
+    let tarefasArray = pegaDadosSalvos()
 
-    // function addEventoLi(li){
-    //     li.addEventListener("click", function(){
-    //         console.log(this)
-    //     })
-    // }
+    function pegaDadosSalvos(){
+        let dadosTarefas = localStorage.getItem("tarefas")
+        dadosTarefas = JSON.parse(dadosTarefas)
+
+        return dadosTarefas && dadosTarefas.length ? dadosTarefas : [{name: "Finalizar todas as tarefas", createdAt: Date.now(), completed: false}]
+    }
+
+    function gerarNovaTarefa(){
+        localStorage.setItem("tarefas", JSON.stringify(tarefasArray))
+    }
+
+    gerarNovaTarefa()
 
     function criaLiTarefa(obj){
         const li = document.createElement("li")
@@ -72,7 +68,6 @@
         li.appendChild(btnApagar)
 
         li.appendChild(p)
-        // addEventoLi(li)
 
         return li
     }
@@ -90,6 +85,7 @@
             createdAt: Date.now(),
             completed: false
         })
+        gerarNovaTarefa()
     }
 
     function ulClicada(e){
@@ -115,11 +111,13 @@
             apagarBtn: function(){
                 tarefasArray.splice(indiceLiAtual, 1)
                 renderizarTarefas()
+                gerarNovaTarefa()
             },
             editarContainerBtn: function(){
                 const valor = liAtual.querySelector(".editInput").value
                 tarefasArray[indiceLiAtual].name = valor
                 renderizarTarefas()
+                gerarNovaTarefa()
             },
             cancelarContainerBtn: function(){
                 liAtual.querySelector(".editContainer").removeAttribute("style")
@@ -127,11 +125,8 @@
             },
             checkBtn: function(){
                 tarefasArray[indiceLiAtual].completed = !tarefasArray[indiceLiAtual].completed
-                // if(tarefasArray[indiceLiAtual].completed){
-                //     liAtual.querySelector(".fa-circle-check").classList.remove("displayNone")
-                // } else{
-                //     liAtual.querySelector(".fa-circle-check").classList.add("displayNone")
-                // }
+
+                gerarNovaTarefa()
                 renderizarTarefas()
             }
         }
@@ -143,7 +138,6 @@
 
     listaTarefasForm.addEventListener("submit", function(e){
         e.preventDefault()
-        console.log(itemInput.value)
         addTarefa(itemInput.value)
         renderizarTarefas()
         itemInput.value = ""
