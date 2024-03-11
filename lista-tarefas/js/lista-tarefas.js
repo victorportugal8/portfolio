@@ -54,6 +54,7 @@
         editContainer.className = "editContainer"
         editInput.setAttribute("type", "text")
         editInput.className = "editInput"
+        editInput.value = obj.name
         editContainer.appendChild(editInput)
         btnContainerEditar.className = "btn-editar"
         btnContainerEditar.textContent = "Editar"
@@ -104,17 +105,21 @@
 
         const acoes = {
             editarBtn: function(){
-                console.log("editarBtn no objeto")
+                const containerEditar = liAtual.querySelector(".editContainer");
+                [...ul.querySelectorAll(".editContainer")].forEach(container =>{
+                    container.removeAttribute("style")
+                })
+                containerEditar.style.display = "flex"
+
             },
             apagarBtn: function(){
                 tarefasArray.splice(indiceLiAtual, 1)
                 renderizarTarefas()
             },
             editarContainerBtn: function(){
-                console.log("editarContainerBtn no objeto")
-            },
-            cancelarContainerBtn: function(){
-                console.log("cancelarContainerBtn no objeto")
+                const valor = liAtual.querySelector(".editInput").value
+                tarefasArray[indiceLiAtual].name = valor
+                renderizarTarefas()
             }
         }
 
