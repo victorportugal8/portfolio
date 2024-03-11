@@ -120,6 +120,10 @@
                 const valor = liAtual.querySelector(".editInput").value
                 tarefasArray[indiceLiAtual].name = valor
                 renderizarTarefas()
+            },
+            cancelarContainerBtn: function(){
+                liAtual.querySelector(".editContainer").removeAttribute("style")
+                liAtual.querySelector(".editInput").value = tarefasArray[indiceLiAtual].name
             }
         }
 
