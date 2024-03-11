@@ -4,7 +4,7 @@
     const itemInput = document.getElementById("item-input")
     const listaTarefasForm = document.getElementById("lista-tarefas-add")
     const  ul = document.getElementById("lista-tarefas")
-    // const li = ul.getElementsByTagName("li")
+    const lis = ul.getElementsByTagName("li")
 
     let tarefasArray = [
         {
@@ -48,7 +48,7 @@
         p.textContent = obj.name
 
         btnEdit.className = "fa-solid fa-pen-to-square"
-        btnEdit.setAttribute("data-action", "editBtn")
+        btnEdit.setAttribute("data-action", "editarBtn")
         li.appendChild(btnEdit)
 
         editContainer.className = "editContainer"
@@ -92,8 +92,35 @@
     }
 
     function ulClicada(e){
-        console.log(e.target)
-        console.log(e.target.getAttribute("data-action"))
+        const dataAction = e.target.getAttribute("data-action")
+        if (!dataAction) return
+
+        let liAtual = e.target
+        while(liAtual.nodeName !== "LI"){
+            liAtual = liAtual.parentElement
+        }
+        
+        const indiceLiAtual = [...lis].indexOf(liAtual)
+
+        const acoes = {
+            editarBtn: function(){
+                console.log("editarBtn no objeto")
+            },
+            apagarBtn: function(){
+                tarefasArray.splice(indiceLiAtual, 1)
+                renderizarTarefas()
+            },
+            editarContainerBtn: function(){
+                console.log("editarContainerBtn no objeto")
+            },
+            cancelarContainerBtn: function(){
+                console.log("cancelarContainerBtn no objeto")
+            }
+        }
+
+        if(acoes[dataAction]){
+            acoes[dataAction]()
+        }
     }
 
     listaTarefasForm.addEventListener("submit", function(e){
