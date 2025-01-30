@@ -149,3 +149,39 @@ body{
 .logo img{
     width: 80px;
 }
+.disclaimer-premium{
+    background: linear-gradient(to right, #101926, #2bdefd);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px;
+    position: fixed;
+}
+.disclaimer-premium .text{
+    flex-shrink: 0;
+}
+.disclaimer-premium .disclaimer-premium__title{
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.disclaimer-premium .disclaimer-premium__subtitle{
+    color: #fff;
+    font-size: 10px;
+    font-weight: 500;
+}
+.disclaimer-premium button{
+    background-color: #fff;
+    border: 0;
+    border-radius: 40px;
+    color: #000;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 30px;
+}
