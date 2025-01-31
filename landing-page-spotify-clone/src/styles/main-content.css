@@ -78,3 +78,25 @@
     height: 48px;
     width: 100px;
 }
+/* Playlist */
+.playlist__container{
+    background-color: #121212;
+    border-radius: 10px;
+    height: 68vh;
+    margin: 10px;
+    padding-top: 16px;  
+}
+.playlist{
+    margin: 24px;
+}
+.playlist #greeting{
+    color: #fff;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 48px;
+}
+.playlist .greeting-subtitle{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+}
